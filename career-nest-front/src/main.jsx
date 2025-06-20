@@ -5,8 +5,8 @@ import "./index.css";
 import { Provider } from "react-redux";
 import store from "./utils/state/store/store.js";
 import { RouterProvider } from "react-router-dom";
-import router from "./utils/router/router";
 import { SnackbarProvider } from "notistack";
+import router from "./utils/router/router.jsx";
 
 createRoot(document.getElementById("root")).render(
     <StrictMode>

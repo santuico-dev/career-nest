@@ -1,0 +1,12 @@
+{
+    "name": "Career_Nest_Dev",
+    "dockerFile": "../docker/php/Dockerfile",
+    "context": "..",
+    "settings": {
+        "php.validate.executablePath": "/usr/local/bin/php",
+        "intelephense.environment.phpVersion": "8.4.0"
+    },
+    "mounts": ["source=${localWorkspaceFolder},target=/var/www/html,type=bind"],
+    "extensions": ["bmewburn.vscode-intelephense-client", "xdebug.php-debug"],
+    "remoteUser": "root"
+}

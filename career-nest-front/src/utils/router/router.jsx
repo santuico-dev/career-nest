@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
-import AuthLayout from "../../Layouts/Auth/auth-layout";
 import Login from "../../Pages/Auth/login-page";
 import Register from "../../Pages/Auth/register-page";
+import AuthLayout from "../../Layouts/Auth/auth-layout";
 
 const router = createBrowserRouter([
     //AUTH
