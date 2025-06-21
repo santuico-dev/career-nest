@@ -7,7 +7,7 @@ import {
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 
-const StyledTextFields = ({
+const StyledTextField = ({
     field,
     meta,
     id,
@@ -42,21 +42,20 @@ const StyledTextFields = ({
                 type={showPassword && type === "password" ? "text" : type}
                 variant={variant}
                 fullWidth={isFullwidth}
-                onChange={(e) => onChange(e)}
+                // onChange={(e) => onChange(e)}
                 InputLabelProps={{
-                    sx: { fontFamily: "Kanit", fontSize: { xs: 14, md: 20 } },
+                    sx: { fontFamily: "Poppins, sans-serif", fontSize: { xs: 14, md: 16 } },
                 }}
                 inputProps={{
                     style: {
                         fontSize: { xs: 14, md: 16 },
-                        fontFamily: "Kanit",
+                        fontFamily: "Poppins, sans-serif",
                     },
                     ...inputProps,
                 }}
                 sx={{
                     "& input": {
-                        fontFamily: "Kanit",
-                        fontSize: { xs: 14, md: 16 },
+                        fontFamily: "Poppins, sans-serif",
                     },
                     background: '#fff',
                     width: width,
@@ -97,4 +96,4 @@ const StyledTextFields = ({
     );
 };
 
-export default StyledTextFields;
+export default StyledTextField;

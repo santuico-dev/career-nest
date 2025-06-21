@@ -1,7 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import Login from "../../Pages/Auth/login-page";
-import Register from "../../Pages/Auth/register-page";
 import AuthLayout from "../../Layouts/Auth/auth-layout";
+import SeekerLogin from "../../Pages/Auth/Seeker/seeker-login-page";
+import SeekerRegister from "../../Pages/Auth/Seeker/seeker-register-page";
 
 const router = createBrowserRouter([
     //AUTH
@@ -9,14 +10,22 @@ const router = createBrowserRouter([
         path: "/",
         element: <AuthLayout />,
         children: [
+
+            // LOGIN FOR JOB HUNTER
             {
                 path: "/",
                 element: <Login />,
             },
 
+            // SEEKER AUTH ROUTE
             {
-                path: "/register",
-                element: <Register />,
+                path: "seeker/login",
+                element: <SeekerLogin />,
+            },
+
+            {
+                path: "seeker/register",
+                element: <SeekerRegister />,
             },
         ],
     },
