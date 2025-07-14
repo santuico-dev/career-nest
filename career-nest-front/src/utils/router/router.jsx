@@ -3,6 +3,7 @@ import Login from "../../Pages/Auth/login-page";
 import AuthLayout from "../../Layouts/Auth/auth-layout";
 import SeekerLogin from "../../Pages/Auth/Seeker/seeker-login-page";
 import SeekerRegister from "../../Pages/Auth/Seeker/seeker-register-page";
+import Dashboard from "../../Pages/Users/Seeker/Dashboard";
 
 const router = createBrowserRouter([
     //AUTH
