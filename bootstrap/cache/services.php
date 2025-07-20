@@ -33,6 +33,7 @@
     29 => 'Tymon\\JWTAuth\\Providers\\LaravelServiceProvider',
     30 => 'Yajra\\Acl\\AclServiceProvider',
     31 => 'App\\Providers\\AppServiceProvider',
+    32 => 'App\\Providers\\EmailServiceProvider',
   ),
   'eager' => 
   array (
@@ -53,6 +54,7 @@
     14 => 'Tymon\\JWTAuth\\Providers\\LaravelServiceProvider',
     15 => 'Yajra\\Acl\\AclServiceProvider',
     16 => 'App\\Providers\\AppServiceProvider',
+    17 => 'App\\Providers\\EmailServiceProvider',
   ),
   'deferred' => 
   array (

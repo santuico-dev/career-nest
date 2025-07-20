@@ -13,4 +13,16 @@ class AuthController extends Controller
     {
         $this->authRepository = $authRepository;
     }
+
+    public function loginUser(Request $request)
+    {
+        $loginResponse = $this->authRepository->loginUser($request);
+        return $loginResponse;
+    }
+
+    public function registerUser(Request $request)
+    {
+        $registerResponse = $this->authRepository->registerUser($request);
+        return $registerResponse;
+    }
 }
