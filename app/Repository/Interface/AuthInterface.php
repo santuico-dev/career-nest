@@ -13,8 +13,8 @@ use Illuminate\Http\Request;
 
 interface AuthInterface
 {
-    public function loginUser(Request $request):? User;
-    public function registerUser(Request $request):? User;
+    public function loginUser($email);
+    public function registerUser(Request $request);
     public function logoutUser(Request $request):? User;
     public function forgotPassword(Request $request):? User;
 }
