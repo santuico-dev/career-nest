@@ -34,6 +34,7 @@
     30 => 'Yajra\\Acl\\AclServiceProvider',
     31 => 'App\\Providers\\AppServiceProvider',
     32 => 'App\\Providers\\EmailServiceProvider',
+    33 => 'App\\Providers\\UtilitiesServiceProvider',
   ),
   'eager' => 
   array (
@@ -55,6 +56,7 @@
     15 => 'Yajra\\Acl\\AclServiceProvider',
     16 => 'App\\Providers\\AppServiceProvider',
     17 => 'App\\Providers\\EmailServiceProvider',
+    18 => 'App\\Providers\\UtilitiesServiceProvider',
   ),
   'deferred' => 
   array (

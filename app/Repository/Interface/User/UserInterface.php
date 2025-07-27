@@ -8,5 +8,5 @@ interface UserInterface {
     public function findUserById($useID): ?User;
     public function findUserByEmail($email): ?User;
     public function findUserByPhoneNumber($phoneNumber): ?User;
-    public function createUser($userData);
+    public function createUser($userData): ?User;
 }

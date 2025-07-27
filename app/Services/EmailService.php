@@ -1,7 +1,5 @@
 <?php
 namespace App\Services;
-
-
 /*
 ***************************
   SERVICES TO HANDLE EMAIL STUFF
@@ -10,17 +8,24 @@ namespace App\Services;
 
 class EmailService {
 
-    public function sendForgotPasswordEmail()
+    protected $utilitiesService;
+
+    public function __construct(UtilitiesService $utilitiesService)
+    {
+        $this->utilitiesService = $utilitiesService;
+    }
+
+
+    public function sendForgotPasswordEmail($email)
     {
 
     }
 
-    public function sendOTPCodeEmail()
+    public function sendOTPCodeEmail($email, $code)
     {
-
     }
 
-    public function sendJobUpdatesEmail()
+    public function sendJobUpdatesEmail($email, $jobUpdate)
     {
 
     }
