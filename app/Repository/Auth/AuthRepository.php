@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Models\User;
 use App\Repository\Interface\AuthInterface;
 use App\Services\EmailService;
+use App\Services\UtilitiesService;
 use Illuminate\Http\Request;
 
 class AuthRepository implements AuthInterface
@@ -15,10 +16,12 @@ class AuthRepository implements AuthInterface
 
     // SERVICES
     protected $emailService;
-    public function __construct(UserRepository $userRepository, EmailService $emailService)
+    protected $utilitiesService;
+    public function __construct(UserRepository $userRepository, EmailService $emailService, UtilitiesService $utilitiesService)
     {
         $this->userRepository = $userRepository;
         $this->emailService = $emailService;
+        $this->utilitiesService = $utilitiesService;
     }
 
     public function loginUser($email)
@@ -49,16 +52,23 @@ class AuthRepository implements AuthInterface
 
             // GET ALL USER DATA FROM REQUEST
             $userData = [
-
+                'email' => $request->email,
+                'firstName' => $request->firstName,
+                'lastName' => $request->lastName,
+                'middleName' => $request->middleName,
+                'suffixName' => $request->suffixName,
+                'phoneNumber' => $request->phoneNumber,
+                'gender' => $request->gender,
             ];
 
             // INSERT USER DATA INTO DB
             $this->userRepository->createUser($userData);
 
             // SEND OTP CODE TO USER EMAIL
+            $generatedOTPCode = $this->utilitiesService->generateRandomSixDigitNumber();
+            $this->emailService->sendOTPCodeEmail($request->email, $generatedOTPCode);
 
-
-            return null;
+            return response()->json(['message' => 'Account successfully created, a confirmation code has been sent to your email.'], 200);
         } catch (\Exception $e) {
             return response()->json(['message' => 'Something went wrong while trying to create account.'], 500);
         }

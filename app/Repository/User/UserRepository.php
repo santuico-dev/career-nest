@@ -21,7 +21,7 @@ class UserRepository implements UserInterface
         return User::where('phone_number', $phoneNumber)->first();
     }
 
-    public function createUser($userData)
+    public function createUser($userData): ?User
     {
         return User::create($userData);
     }
